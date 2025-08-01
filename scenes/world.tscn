@@ -14,13 +14,16 @@ size = Vector3(20, 1, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="test_fighter" parent="." instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13771, 2.94547, -0.682431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13771, 2.94547, 2.18245)
 
 [node name="Camera" parent="." instance=ExtResource("2_fj7yv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.76418, 7.69578)
+transform = Transform3D(1, 0, 0, 0, 0.969544, 0.244918, 0, -0.244918, 0.969544, 0, 3.76418, 9.33338)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.998297, 0)
 use_collision = true
 size = Vector3(5, 1, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.122684, 0.598071, 0.791997, 0, -0.798026, 0.602623, 0.992446, 0.0739319, 0.0979046, 12.5149, 5.3762, -12.2308)
