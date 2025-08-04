@@ -6,12 +6,14 @@ extends CharacterBody3D
 @export var run_speed : float = 3.0
 @export var jump_speed : float = 4.0
 
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var base: RayCast3D = $CollisionShape3D/base
 @onready var label_state: Label = $label_state
 
 
 var state : int = 0
+var attack_state : int = 0
+
 """
 0.. standing
 1.. jumping upward
@@ -43,6 +45,7 @@ func _physics_process(delta):
 	#state machine
 	match state:
 		0: # ..standing
+			attack_state = 0
 			#input
 			if Input.is_action_pressed("key_left"):
 				velocity.x = - run_speed * delta * 100
@@ -56,19 +59,34 @@ func _physics_process(delta):
 			if Input.is_action_pressed("key_duck"):
 				state = 4
 		1: # ..jumping upward
+			attack_state = 1
 			if velocity.y <= 0:
 				state = 2
 		2: # ..falling
+			attack_state = 2
 			if on_floor:
 				state = 0
 		3: # ..lying on the floor
-			pass
+			attack_state = 3
 		4: # ..crouched
+			attack_state = 4
 			if Input.is_action_just_released("key_duck"):
 				state = 0
 		5: # ..attacking
 			#depending what state the player was before what attack is being played
-			pass
+			match attack_state:
+				0:
+					_attack_normal(delta)
+				1:
+					pass
+				2:
+					pass
+				3:
+					pass
+				4:
+					pass
+				_:
+					pass
 		6: # .. being hit
 			#determine how badly the fighter was hit, with stance
 			pass
@@ -82,7 +100,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _attack_normal(delta):
-	pass
+	AnimationPlayer.play("attack_normal")
 
 func _attack_jump(delta):
 	pass
@@ -97,4 +115,7 @@ func _attack_lying(delta):
 	pass
 	
 func _block(delta):
+	pass
+
+func _being_hit(delta):
 	pass
