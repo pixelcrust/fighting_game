@@ -7,8 +7,9 @@ extends CharacterBody3D
 @export var jump_speed : float = 4.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var base: RayCast3D = $CollisionShape3D/base
+@onready var base: RayCast3D = $base
 @onready var label_state: Label = $label_state
+@onready var base_rig: Node3D = $Base_Rig
 
 
 var state : int = 0
@@ -48,8 +49,10 @@ func _physics_process(delta):
 			attack_state = 0
 			#input
 			if Input.is_action_pressed("key_left"):
+				turn_left(delta)
 				velocity.x = - run_speed * delta * 100
 			elif Input.is_action_pressed("key_right"):
+				turn_right(delta)
 				velocity.x = run_speed * delta * 100
 			else:
 				velocity.x = 0
@@ -97,10 +100,19 @@ func _physics_process(delta):
 		_:
 			pass
 	
+	#animations
+	if state == 0 and velocity.x != 0:
+		base_rig.animation_player.play("run")
+	elif state == 0 and velocity.x == 0:
+		base_rig.animation_player.play("idle")
+	elif state == 1:
+		base_rig.animation_player.play("jump")
+		
 	move_and_slide()
 	
 func _attack_normal(delta):
-	AnimationPlayer.play("attack_normal")
+	#AnimationPlayer.play("attack_normal")
+	pass
 
 func _attack_jump(delta):
 	pass
@@ -119,3 +131,11 @@ func _block(delta):
 
 func _being_hit(delta):
 	pass
+
+func turn_left(delta):
+	if rotation.y == 90:
+		rotation.y = 180
+
+func turn_right(delta):
+	if rotation.y == 180:
+		rotation.y = 90

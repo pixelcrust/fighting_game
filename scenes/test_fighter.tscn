@@ -1,36 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5m04rkbekqft"]
 
 [ext_resource type="Script" uid="uid://cpvr6he6n03xx" path="res://scripts/script_fighter.gd" id="1_udbmd"]
-
-[sub_resource type="Animation" id="Animation_gmfjy"]
-resource_name = "attack_standing"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.698132), Vector3(0, 0, 0)]
-}
+[ext_resource type="PackedScene" uid="uid://bscx0gc77xrcr" path="res://scenes/model_test_fighter.tscn" id="2_7e5go"]
 
 [sub_resource type="Animation" id="Animation_7e5go"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -0.698132)]
-}
+
+[sub_resource type="Animation" id="Animation_gmfjy"]
+resource_name = "attack_standing"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uxbsr"]
 _data = {
@@ -38,16 +15,12 @@ _data = {
 &"attack_standing": SubResource("Animation_gmfjy")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pml13"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_os3gi"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e5go"]
+radius = 0.3
+height = 1.8
 
 [node name="test_fighter" type="CharacterBody3D"]
 script = ExtResource("1_udbmd")
-hp = null
-stance = null
-run_speed = null
-jump_speed = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -60,13 +33,11 @@ offset_top = 22.0
 offset_right = 73.0
 offset_bottom = 45.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_pml13")
+[node name="Base_Rig" parent="." instance=ExtResource("2_7e5go")]
 
-[node name="base" type="RayCast3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, 0, 0)
+[node name="base" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976709, -0.000217199)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_os3gi")
-skeleton = NodePath("../..")
+[node name="movement_collision_shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
+shape = SubResource("CapsuleShape3D_7e5go")
