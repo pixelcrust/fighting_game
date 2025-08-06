@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5m04rkbekqft"]
 
 [ext_resource type="Script" uid="uid://cpvr6he6n03xx" path="res://scripts/script_fighter.gd" id="1_udbmd"]
-[ext_resource type="PackedScene" uid="uid://bscx0gc77xrcr" path="res://scenes/model_test_fighter.tscn" id="2_7e5go"]
+[ext_resource type="PackedScene" uid="uid://bgw2oybm1tios" path="res://scenes/test_rig.tscn" id="2_7e5go"]
 
 [sub_resource type="Animation" id="Animation_7e5go"]
 length = 0.001
@@ -33,11 +33,11 @@ offset_top = 22.0
 offset_right = 73.0
 offset_bottom = 45.0
 
-[node name="Base_Rig" parent="." instance=ExtResource("2_7e5go")]
-
 [node name="base" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976709, -0.000217199)
 
 [node name="movement_collision_shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
 shape = SubResource("CapsuleShape3D_7e5go")
+
+[node name="base_rig" parent="." instance=ExtResource("2_7e5go")]
