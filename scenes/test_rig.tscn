@@ -1,7 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgw2oybm1tios"]
+[gd_scene load_steps=11 format=3 uid="uid://bgw2oybm1tios"]
 
-[ext_resource type="Script" uid="uid://bele4rnew1nn3" path="res://scenes/test_rig.gd" id="1_0sfh5"]
+[ext_resource type="Script" uid="uid://bele4rnew1nn3" path="res://scripts/test_rig.gd" id="1_0sfh5"]
 [ext_resource type="PackedScene" uid="uid://u2566hdcx4h6" path="res://blender_models/Base_Rig_Test_002.glb" id="1_udvdc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag8qk"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ffife"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0sfh5"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qow21"]
+size = Vector3(0.1, 0.3, 0.1)
 
 [sub_resource type="Animation" id="Animation_0sfh5"]
 resource_name = "idle"
@@ -570,7 +582,7 @@ _data = {
 &"run": SubResource("Animation_ag8qk")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="base_rig" type="Node3D"]
 script = ExtResource("1_0sfh5")
 
 [node name="test_rig" parent="." instance=ExtResource("1_udvdc")]
@@ -604,40 +616,67 @@ bones/71/rotation = Quaternion(-0.198845, -0.0946101, -0.0526296, 0.974033)
 bones/72/rotation = Quaternion(0.0570964, 1.79201e-15, 0.998369, -9.40992e-09)
 
 [node name="cfpoly_007" parent="test_rig/rig_base/Skeleton3D" index="0"]
-transform = Transform3D(2.58746, -0.00575864, 0.0350384, 0.00523715, 2.58741, 0.038502, -0.0351199, -0.0384275, 2.58718, 0.00124997, -0.0622845, 0.00127578)
+transform = Transform3D(2.58746, -0.00575864, 0.0350384, 0.00523716, 2.58741, 0.038502, -0.0351198, -0.0384274, 2.58718, 0.00124997, -0.0622845, 0.00127578)
 
 [node name="cfpoly_006" parent="test_rig/rig_base/Skeleton3D" index="1"]
-transform = Transform3D(2.58681, 0.0465906, -0.0496015, -0.0548982, 2.54331, -0.474115, 0.0402143, 0.475003, 2.54342, -0.0181393, -0.175717, -0.0141326)
+transform = Transform3D(2.58681, 0.0465906, -0.0496015, -0.0548982, 2.54331, -0.474115, 0.0402144, 0.475003, 2.54342, -0.0181393, -0.175717, -0.0141326)
 
 [node name="cfpoly_005" parent="test_rig/rig_base/Skeleton3D" index="2"]
-transform = Transform3D(2.5872, 0.050183, -0.00828769, -0.0476778, 2.53964, 0.494103, 0.0177157, -0.493854, 2.54008, 0.0010072, 0.154919, -0.0141858)
+transform = Transform3D(2.5872, 0.0501831, -0.00828793, -0.0476778, 2.53964, 0.494104, 0.0177159, -0.493856, 2.54008, 0.00100711, 0.15492, -0.0141858)
 
 [node name="cfpoly_002" parent="test_rig/rig_base/Skeleton3D" index="3"]
-transform = Transform3D(2.58745, 0.0305756, 0.0186406, -0.0325527, 2.56961, 0.303703, -0.014922, -0.303907, 2.56975, 0.00720868, 0.112274, -0.00969398)
+transform = Transform3D(2.58745, 0.0305757, 0.0186404, -0.0325528, 2.56961, 0.303704, -0.0149218, -0.303908, 2.56975, 0.00720858, 0.112274, -0.00969392)
 
 [node name="cfpoly_014" parent="test_rig/rig_base/Skeleton3D" index="4"]
 transform = Transform3D(2.5877, 0, 0, 0, 2.58769, -1.37091e-06, 0, 1.49012e-06, 2.5877, 0, -5.96046e-07, -2.14577e-06)
 
 [node name="cfpoly_015" parent="test_rig/rig_base/Skeleton3D" index="5"]
-transform = Transform3D(-1.13671, -1.71225, -1.57234, 1.46909, 0.82734, -1.96303, 1.80162, -1.75496, 0.608652, -0.339762, -1.38373, -1.27262)
+transform = Transform3D(-1.13671, -1.71225, -1.57234, 1.46909, 0.82734, -1.96303, 1.80162, -1.75496, 0.608652, -0.339763, -1.38373, -1.27262)
+
+[node name="area_hand_left" type="Area3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_015/cfpoly_015" index="0"]
+transform = Transform3D(1, 5.66244e-07, -1.78814e-07, 5.21541e-07, 1, 0, 2.98023e-08, 0, 0.999999, 0.27288, -0.0015706, -0.524886)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_015/cfpoly_015/area_hand_left"]
+transform = Transform3D(1, -2.98023e-08, -2.98023e-08, 8.9407e-08, 1, 1.49012e-08, 2.98023e-08, -7.45058e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_ag8qk")
 
 [node name="cfpoly_012" parent="test_rig/rig_base/Skeleton3D" index="6"]
-transform = Transform3D(-1.13671, -1.71225, -1.57234, 1.46909, 0.827339, -1.96303, 1.80162, -1.75496, 0.608651, -0.339763, -1.38373, -1.27262)
+transform = Transform3D(-1.13671, -1.71225, -1.57234, 1.46909, 0.827339, -1.96303, 1.80162, -1.75496, 0.608652, -0.339763, -1.38373, -1.27262)
 
 [node name="cfpoly_011" parent="test_rig/rig_base/Skeleton3D" index="7"]
-transform = Transform3D(1.91199, -9.98378e-07, -1.7437, -0.448232, 2.50074, -0.491492, 1.6851, 0.665189, 1.84774, -0.91729, -0.249357, -0.553591)
+transform = Transform3D(1.91199, -1.63913e-07, -1.7437, -0.448232, 2.50074, -0.491493, 1.6851, 0.665189, 1.84774, -0.91729, -0.249357, -0.553591)
 
 [node name="cfpoly_009" parent="test_rig/rig_base/Skeleton3D" index="8"]
-transform = Transform3D(2.5877, 0, 0, 0, 2.5121, 0.620902, 0, -0.620902, 2.51211, 0, 0.379524, -0.0467373)
+transform = Transform3D(2.5877, 0, 0, 0, 2.5121, 0.620902, 0, -0.620902, 2.5121, 0, 0.379524, -0.0467374)
 
 [node name="cfpoly_010" parent="test_rig/rig_base/Skeleton3D" index="9"]
-transform = Transform3D(-1.09601, 1.48011, 1.81775, -1.45724, 1.14157, -1.80816, -1.83614, -1.7895, 0.350007, 0.482141, -1.32504, -1.40737)
+transform = Transform3D(-1.09601, 1.48011, 1.81775, -1.45724, 1.14157, -1.80816, -1.83614, -1.78949, 0.350007, 0.482141, -1.32504, -1.40737)
+
+[node name="area_hand_right" type="Area3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_010/cfpoly_010" index="0"]
+transform = Transform3D(1, 1.07288e-06, -5.06639e-07, 8.9407e-08, 1, -2.08616e-07, 2.68221e-07, -6.55651e-07, 1, -0.274687, 0.0051426, -0.53334)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_010/cfpoly_010/area_hand_right"]
+shape = SubResource("BoxShape3D_ffife")
 
 [node name="cfpoly_001" parent="test_rig/rig_base/Skeleton3D" index="10"]
 transform = Transform3D(-1.09601, 1.48011, 1.81775, -1.45725, 1.14157, -1.80816, -1.83614, -1.78949, 0.350008, 0.482141, -1.32504, -1.40737)
 
 [node name="cfpoly_003" parent="test_rig/rig_base/Skeleton3D" index="11"]
-transform = Transform3D(1.87672, 1.35601e-06, 1.78161, 0.691875, 2.3846, -0.72881, -1.64178, 1.00492, 1.72942, 0.937419, -0.369798, -0.59502)
+transform = Transform3D(1.87672, 1.20699e-06, 1.78161, 0.691875, 2.3846, -0.72881, -1.64178, 1.00492, 1.72942, 0.937419, -0.369798, -0.59502)
+
+[node name="area_left_foot" type="Area3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178813, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_004/area_left_foot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0147651, 0.0841388, 0)
+shape = SubResource("BoxShape3D_0sfh5")
+
+[node name="area_right_foot" type="Area3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141353, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_rig/rig_base/Skeleton3D/cfpoly_008/area_right_foot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0113862, -0.108712, 0)
+shape = SubResource("BoxShape3D_qow21")
 
 [node name="AnimationPlayer" parent="test_rig" index="1"]
 libraries = {
