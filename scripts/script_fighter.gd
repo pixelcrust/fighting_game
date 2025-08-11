@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var player : int = 0
 
 @export var hp : float = 100
 @export var stance : float = 100
@@ -30,7 +31,10 @@ var attack_state : int = 0
 var on_floor : bool = false
 
 func _ready():
-	pass
+	if player == 0:
+		pass
+	elif player == 1:
+		pass
 
 func _physics_process(delta):
 	
