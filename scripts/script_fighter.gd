@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var player : int = 0
+@export var player : int = 0 #starting with zero
 
 @export var hp : float = 100
 @export var stance : float = 100
@@ -12,6 +12,13 @@ extends CharacterBody3D
 @onready var label_state: Label = $label_state
 @onready var base_rig: Node3D = $base_rig
 
+#controlls
+var key_left : String
+var key_right : String
+var key_jump : String
+var key_duck : String
+var key_attack1 : String
+var key_block : String
 
 
 var state : int = 0
@@ -32,9 +39,19 @@ var on_floor : bool = false
 
 func _ready():
 	if player == 0:
-		pass
+		key_left = "key_left_0"
+		key_right = "key_right_0"
+		key_jump = "key_jump_0"
+		key_duck = "key_duck_0"
+		key_attack1 = "key_attack_0"
+		key_block = "key_block_0"
 	elif player == 1:
-		pass
+		key_left = "key_left_1"
+		key_right = "key_right_1"
+		key_jump = "key_jump_1"
+		key_duck = "key_duck_1"
+		key_attack1 = "key_attack_1"
+		key_block = "key_block_1"
 
 func _physics_process(delta):
 	
@@ -53,18 +70,18 @@ func _physics_process(delta):
 		0: # ..standing
 			attack_state = 0
 			#input
-			if Input.is_action_pressed("key_left"):
+			if Input.is_action_pressed(key_left):
 				turn_left(delta)
 				velocity.x = - run_speed * delta * 100
-			elif Input.is_action_pressed("key_right"):
+			elif Input.is_action_pressed(key_right):
 				turn_right(delta)
 				velocity.x = run_speed * delta * 100
 			else:
 				velocity.x = 0
-			if Input.is_action_pressed("key_jump") && on_floor:
+			if Input.is_action_pressed(key_jump) && on_floor:
 				velocity.y = jump_speed * delta * 100
 				state = 1
-			if Input.is_action_pressed("key_duck"):
+			if Input.is_action_pressed(key_duck):
 				state = 4
 		1: # ..jumping upward
 			attack_state = 1
@@ -78,7 +95,7 @@ func _physics_process(delta):
 			attack_state = 3
 		4: # ..crouched
 			attack_state = 4
-			if Input.is_action_just_released("key_duck"):
+			if Input.is_action_just_released(key_duck):
 				state = 0
 		5: # ..attacking
 			#depending what state the player was before what attack is being played
