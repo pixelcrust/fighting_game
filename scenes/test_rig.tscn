@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgw2oybm1tios"]
+[gd_scene load_steps=12 format=3 uid="uid://bgw2oybm1tios"]
 
 [ext_resource type="Script" uid="uid://bele4rnew1nn3" path="res://scripts/test_rig.gd" id="1_0sfh5"]
 [ext_resource type="PackedScene" uid="uid://u2566hdcx4h6" path="res://blender_models/Base_Rig_Test_002.glb" id="1_udvdc"]
+[ext_resource type="PackedScene" uid="uid://dm35mdk4nuxai" path="res://blender_models/Base_Rig.003.glb" id="3_qow21"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ag8qk"]
 size = Vector3(0.05, 0.05, 0.05)
@@ -684,4 +685,34 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="Base_Rig_003" parent="." instance=ExtResource("3_qow21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75551, 0, 0.761553)
+
+[node name="Skeleton3D" parent="Base_Rig_003/rig_base" index="0"]
+bones/1/position = Vector3(0, -0.00734104, -1.08166)
+bones/3/rotation = Quaternion(0.0624129, 0.987931, -0.140435, 0.0193891)
+bones/4/rotation = Quaternion(-0.169648, 0.000574039, -0.024455, 0.985201)
+bones/5/rotation = Quaternion(-0.0669873, 0.911609, -0.405475, -0.00844035)
+bones/6/rotation = Quaternion(-0.237417, -0.000565655, 0.034224, 0.970805)
+bones/7/rotation = Quaternion(0.689521, 0, 0, 0.724266)
+bones/9/rotation = Quaternion(-0.37853, -0.0699047, -0.48643, 0.784356)
+bones/10/rotation = Quaternion(0.0551318, 0.522899, -0.525178, 0.669122)
+bones/11/rotation = Quaternion(0.58382, 0.254485, -0.308934, 0.706364)
+bones/28/rotation = Quaternion(0.578387, 0.00813987, -0.62881, 0.519616)
+bones/31/rotation = Quaternion(0.231148, 0, 0, 0.972919)
+bones/32/rotation = Quaternion(-0.385445, 0.0426578, 0.527101, 0.75616)
+bones/33/rotation = Quaternion(0.0498566, -0.575361, 0.459887, 0.674521)
+bones/34/rotation = Quaternion(0.607561, -0.193057, 0.300747, 0.70933)
+bones/51/rotation = Quaternion(0.649991, -0.011393, 0.567534, 0.505259)
+bones/53/position = Vector3(0.173005, -0.249205, -0.102729)
+bones/53/rotation = Quaternion(0.27751, 0, 0, 0.960723)
+bones/54/rotation = Quaternion(-0.203431, 0.0938934, 0.051807, 0.973199)
+bones/56/position = Vector3(0.173005, -0.249205, -0.102729)
+bones/58/position = Vector3(-0.173005, 0.154709, -0.102729)
+bones/59/position = Vector3(-1.49012e-08, -1.90921e-07, 2.1645e-07)
+bones/59/rotation = Quaternion(0.961676, 0, 0, -0.27419)
+bones/60/rotation = Quaternion(-0.198845, -0.0946101, -0.0526296, 0.974033)
+bones/62/rotation = Quaternion(0.0570964, 1.75889e-15, 0.998369, -9.40992e-09)
+
 [editable path="test_rig"]
+[editable path="Base_Rig_003"]
