@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://3b1ee6qxl2l7"]
+
+[ext_resource type="PackedScene" uid="uid://c1pfwljcwbc8l" path="res://blender_models/Base_Rig.002.glb" id="1_t735r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t735r"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xbqto"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d507y"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u0jwa"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[node name="base_rig" instance=ExtResource("1_t735r")]
+
+[node name="Skeleton3D" parent="rig_base" index="0"]
+bones/1/position = Vector3(0, -0.00734103, -0.928704)
+bones/1/rotation = Quaternion(0.98555, 0, 0, -0.169383)
+bones/3/rotation = Quaternion(0.0533862, 0.757114, -0.65104, 0.00862484)
+bones/4/rotation = Quaternion(-0.00358802, 0.000582657, -0.000517218, 0.999993)
+bones/7/rotation = Quaternion(-0.185177, 0.933753, -0.257791, -0.165405)
+bones/8/rotation = Quaternion(-0.56695, -0.000477633, 0.0817265, 0.819688)
+bones/12/rotation = Quaternion(0.848131, 0, 0, 0.529787)
+bones/13/rotation = Quaternion(-0.249991, 0, 0, 0.968248)
+bones/14/rotation = Quaternion(-0.508977, 0.173128, -0.545202, 0.643214)
+bones/15/rotation = Quaternion(0.00968252, 0.77981, -0.0436097, 0.62442)
+bones/16/rotation = Quaternion(0.677225, -0.196411, -0.204095, 0.679069)
+bones/35/rotation = Quaternion(0.878837, 0.0284357, 0.00738968, 0.476218)
+bones/39/rotation = Quaternion(0.165322, 0, 0, 0.98624)
+bones/41/rotation = Quaternion(-0.0524327, 0.249284, 0.763778, 0.593087)
+bones/42/rotation = Quaternion(0.535908, -0.443282, 0.389508, 0.60381)
+bones/43/rotation = Quaternion(0.429338, -0.0403576, -0.196401, 0.880606)
+bones/62/rotation = Quaternion(0.701127, -0.0279549, -0.271711, 0.658645)
+bones/65/position = Vector3(0.171224, 0.505974, -0.136461)
+bones/65/rotation = Quaternion(0.161051, 0, 0, 0.986946)
+bones/66/rotation = Quaternion(-0.31068, 0.0990847, 0.0410142, 0.944446)
+bones/67/position = Vector3(0.173005, 0.518742, -0.121918)
+bones/69/position = Vector3(-0.173005, -0.61228, -0.323176)
+bones/70/position = Vector3(5.36442e-07, 3.10014e-05, -1.73055e-05)
+bones/70/rotation = Quaternion(0.482676, 0, 0, -0.875799)
+bones/71/rotation = Quaternion(-0.123082, -0.0902664, -0.0597742, 0.986474)
+bones/72/rotation = Quaternion(0.0570964, 1.75889e-15, 0.998369, -9.40992e-09)
+bones/73/position = Vector3(5.43192e-07, 3.10186e-05, -1.73002e-05)
+bones/73/rotation = Quaternion(0.970332, -2.88219e-08, 1.15673e-07, -0.241776)
+bones/74/position = Vector3(0.171224, 0.505974, -0.136461)
+
+[node name="cfpoly_007" parent="rig_base/Skeleton3D" index="0"]
+transform = Transform3D(2.57893, -0.212896, 0.0027328, 0.135025, 1.66104, 1.97962, -0.164622, -1.97277, 1.66652, -0.00689612, 0.620866, -0.113133)
+
+[node name="cfpoly_006" parent="rig_base/Skeleton3D" index="1"]
+transform = Transform3D(2.58252, -0.15703, -0.0463719, 0.153423, 2.06485, 1.55211, -0.0571845, -1.55175, 2.07003, -0.0184272, 0.521389, -0.0281209)
+
+[node name="cfpoly_005" parent="rig_base/Skeleton3D" index="2"]
+transform = Transform3D(2.32105, -1.0504, 0.453389, 0.838451, 0.86403, -2.29056, 0.778399, 2.20143, 1.11534, -0.0284935, -0.623609, -0.166762)
+
+[node name="cfpoly_002" parent="rig_base/Skeleton3D" index="3"]
+transform = Transform3D(2.38302, -0.608456, -0.804494, 0.416296, 2.47318, -0.637398, 0.918762, 0.457558, 2.37544, -0.31293, -0.27403, 0.132578)
+
+[node name="cfpoly_014" parent="rig_base/Skeleton3D" index="4"]
+transform = Transform3D(2.5877, 0, 0, 0, 2.43921, -0.863961, 0, 0.863959, 2.43921, 0, -0.373639, 0.127451)
+
+[node name="cfpoly_015" parent="rig_base/Skeleton3D" index="5"]
+transform = Transform3D(0.503718, 0.126531, -2.53504, -0.135577, 2.58213, 0.101943, 2.53458, 0.112975, 0.509264, -1.21807, -0.0217352, -1.38146)
+
+[node name="area_hand_left" type="Area3D" parent="rig_base/Skeleton3D/cfpoly_015/cfpoly_015" index="0"]
+transform = Transform3D(1, 5.66244e-07, -1.78814e-07, 5.21541e-07, 1, 0, 2.98023e-08, 0, 0.999999, 0.27288, -0.0015706, -0.524886)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rig_base/Skeleton3D/cfpoly_015/cfpoly_015/area_hand_left" index="0"]
+transform = Transform3D(1, -2.98023e-08, -2.98023e-08, 8.9407e-08, 1, 1.49012e-08, 2.98023e-08, -7.45058e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_t735r")
+
+[node name="cfpoly_012" parent="rig_base/Skeleton3D" index="6"]
+transform = Transform3D(0.503718, 0.12653, -2.53505, -0.135576, 2.58213, 0.101943, 2.53458, 0.112973, 0.509264, -1.21807, -0.0217352, -1.38146)
+
+[node name="cfpoly_011" parent="rig_base/Skeleton3D" index="7"]
+transform = Transform3D(1.57131, 0.449433, -2.00629, -2.01431, -0.169479, -1.61556, -0.41199, 2.54273, 0.246934, -1.10463, -0.673405, -1.00695)
+
+[node name="cfpoly_009" parent="rig_base/Skeleton3D" index="8"]
+transform = Transform3D(2.5877, 0, 0, 0, 2.53583, -0.515524, 0, 0.515524, 2.53583, 0, -0.0597323, 0.233771)
+
+[node name="cfpoly_010" parent="rig_base/Skeleton3D" index="9"]
+transform = Transform3D(-2.2612, 1.20413, 0.365016, -1.14018, -1.64345, -1.64173, -0.532121, -1.59541, 1.96665, -0.30656, -0.69892, 0.0381518)
+
+[node name="area_hand_right" type="Area3D" parent="rig_base/Skeleton3D/cfpoly_010/cfpoly_010" index="0"]
+transform = Transform3D(1, 1.07288e-06, -5.06639e-07, 8.9407e-08, 1, -2.08616e-07, 2.68221e-07, -6.55651e-07, 1, -0.274687, 0.0051426, -0.53334)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rig_base/Skeleton3D/cfpoly_010/cfpoly_010/area_hand_right" index="0"]
+shape = SubResource("BoxShape3D_xbqto")
+
+[node name="cfpoly_001" parent="rig_base/Skeleton3D" index="10"]
+transform = Transform3D(-2.2612, 1.20413, 0.365017, -1.14018, -1.64345, -1.64173, -0.532121, -1.59541, 1.96665, -0.30656, -0.698921, 0.0381525)
+
+[node name="cfpoly_003" parent="rig_base/Skeleton3D" index="11"]
+transform = Transform3D(-0.384441, 2.54556, -0.261742, -1.46224, -0.435735, -2.09002, -2.10006, -0.1626, 1.50316, -0.319462, -0.980863, -0.455691)
+
+[node name="area_left_foot" type="Area3D" parent="rig_base/Skeleton3D/cfpoly_004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178813, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rig_base/Skeleton3D/cfpoly_004/area_left_foot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0147651, 0.0841388, 0)
+shape = SubResource("BoxShape3D_d507y")
+
+[node name="area_right_foot" type="Area3D" parent="rig_base/Skeleton3D/cfpoly_008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141353, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rig_base/Skeleton3D/cfpoly_008/area_right_foot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0113862, -0.108712, 0)
+shape = SubResource("BoxShape3D_u0jwa")

@@ -10,7 +10,7 @@ extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var base: RayCast3D = $base
 @onready var label_state: Label = $label_state
-@onready var base_rig: Node3D = $base_rig
+@onready var base_rig: Node3D = $Base_Rig_003
 
 #controlls
 var key_left : String

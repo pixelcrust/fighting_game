@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp184cddhtubo"]
+
+[ext_resource type="PackedScene" uid="uid://dm35mdk4nuxai" path="res://blender_models/Base_Rig.003.glb" id="1_i5gnq"]
+[ext_resource type="Script" uid="uid://bqxrflxmu3o5q" path="res://character_rig.gd" id="2_ujp2s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujp2s"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Base_Rig_003" instance=ExtResource("1_i5gnq")]
+script = ExtResource("2_ujp2s")
+
+[node name="Skeleton3D" parent="rig_base" index="0"]
+bones/3/rotation = Quaternion(0.0557636, 0.975072, -0.214332, 0.0136437)
+bones/4/rotation = Quaternion(-0.116987, 0.000578578, -0.0168638, 0.99299)
+bones/5/rotation = Quaternion(-0.0557636, 0.975072, -0.214332, -0.0136437)
+bones/6/rotation = Quaternion(-0.116987, -0.000578578, 0.0168638, 0.99299)
+bones/7/rotation = Quaternion(0.689521, 0, 0, 0.724266)
+bones/9/rotation = Quaternion(-0.398817, 0.0416886, -0.641026, 0.65444)
+bones/10/rotation = Quaternion(0.330896, 0.330141, -0.0700928, 0.88125)
+bones/11/rotation = Quaternion(-0.0174191, 0.00228071, 0.0309535, 0.999366)
+bones/28/rotation = Quaternion(-0.0174191, 0.00228068, 0.0309525, 0.999366)
+bones/31/rotation = Quaternion(0.347038, 0, 0, 0.937851)
+bones/32/rotation = Quaternion(-0.398817, -0.0416886, 0.641026, 0.65444)
+bones/33/rotation = Quaternion(0.330896, -0.330141, 0.0700928, 0.88125)
+bones/34/rotation = Quaternion(-0.0174191, -0.00228071, -0.0309535, 0.999366)
+bones/51/rotation = Quaternion(-0.0174191, -0.00228068, -0.0309525, 0.999366)
+bones/53/position = Vector3(0.173005, -0.0706194, -0.10273)
+bones/53/rotation = Quaternion(0.27751, 0, 0, 0.960723)
+bones/54/rotation = Quaternion(-0.203431, 0.0938934, 0.051807, 0.973199)
+bones/59/position = Vector3(-2.98023e-08, -1.74623e-07, 2.52539e-07)
+bones/59/rotation = Quaternion(0.961676, 0, 0, -0.27419)
+bones/60/rotation = Quaternion(-0.198845, -0.0946101, -0.0526296, 0.974033)
+bones/62/rotation = Quaternion(0.0570964, 1.75889e-15, 0.998369, -9.40992e-09)
+
+[node name="hand_left" type="Area3D" parent="rig_base/Skeleton3D" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rig_base/Skeleton3D/hand_left" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73832, 0, -1.37827)
+shape = SubResource("BoxShape3D_ujp2s")
