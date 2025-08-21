@@ -1,19 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5m04rkbekqft"]
+[gd_scene load_steps=4 format=3 uid="uid://b5m04rkbekqft"]
 
 [ext_resource type="Script" uid="uid://cpvr6he6n03xx" path="res://scripts/script_fighter.gd" id="1_udbmd"]
 [ext_resource type="PackedScene" uid="uid://dp184cddhtubo" path="res://character_rig.tscn" id="2_7e5go"]
-
-[sub_resource type="Animation" id="Animation_7e5go"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_gmfjy"]
-resource_name = "attack_standing"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uxbsr"]
-_data = {
-&"RESET": SubResource("Animation_7e5go"),
-&"attack_standing": SubResource("Animation_gmfjy")
-}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e5go"]
 radius = 0.3
@@ -21,11 +9,6 @@ height = 1.8
 
 [node name="test_fighter" type="CharacterBody3D"]
 script = ExtResource("1_udbmd")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_uxbsr")
-}
 
 [node name="label_state" type="Label" parent="."]
 offset_left = 33.0

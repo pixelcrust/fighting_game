@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var run_speed : float = 3.0
 @export var jump_speed : float = 4.0
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
 @onready var base: RayCast3D = $base
 @onready var label_state: Label = $label_state
 @onready var base_rig: Node3D = $Base_Rig_003
@@ -43,14 +43,14 @@ func _ready():
 		key_right = "key_right_0"
 		key_jump = "key_jump_0"
 		key_duck = "key_duck_0"
-		key_attack1 = "key_attack_0"
+		key_attack1 = "key_attack1_0"
 		key_block = "key_block_0"
 	elif player == 1:
 		key_left = "key_left_1"
 		key_right = "key_right_1"
 		key_jump = "key_jump_1"
 		key_duck = "key_duck_1"
-		key_attack1 = "key_attack_1"
+		key_attack1 = "key_attack1_1"
 		key_block = "key_block_1"
 
 func _physics_process(delta):
@@ -83,6 +83,9 @@ func _physics_process(delta):
 				state = 1
 			if Input.is_action_pressed(key_duck):
 				state = 4
+			if Input.is_action_pressed(key_attack1):
+				state = 5
+				
 		1: # ..jumping upward
 			attack_state = 1
 			if velocity.y <= 0:
@@ -133,7 +136,10 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _attack_normal(delta):
-	#AnimationPlayer.play("attack_normal")
+	
+	animation_player.play("punch")
+	if animation_player.animation_finished("punch"):
+		state = 0
 	pass
 
 func _attack_jump(delta):
