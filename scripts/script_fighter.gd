@@ -138,9 +138,10 @@ func _physics_process(delta):
 func _attack_normal(delta):
 	
 	animation_player.play("punch")
-	if animation_player.animation_finished("punch"):
-		state = 0
-	pass
+	#if animation_player.animation_finished("punch"):
+		#state = 0
+	await get_tree().create_timer(1.0667).timeout
+	state = 0
 
 func _attack_jump(delta):
 	pass
