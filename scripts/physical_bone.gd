@@ -11,5 +11,6 @@ func _process(delta):
 	pass
 
 func get_hit(dmg : float,stagger : float):
+	
+	emit_signal("bone_hit",dmg,stagger)
 	print_debug("emit signal pls")
-	emit_signal("bone_hit()",dmg,stagger)

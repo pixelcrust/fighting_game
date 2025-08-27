@@ -24,3 +24,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
 shape = SubResource("CapsuleShape3D_7e5go")
 
 [node name="Base_Rig_003" parent="." instance=ExtResource("2_7e5go")]
+
+[connection signal="being_hit_to_main_script" from="Base_Rig_003" to="." method="being_hit_to_main_script"]

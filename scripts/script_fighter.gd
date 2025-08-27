@@ -168,3 +168,7 @@ func turn_left(delta):
 func turn_right(delta):
 	if rotation.y == 180:
 		rotation.y = 90
+
+
+func being_hit_to_main_script(dmg: float, stagger: float) -> void:
+	pass # Replace with function body.
