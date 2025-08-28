@@ -10,12 +10,6 @@ height = 1.8
 [node name="test_fighter" type="CharacterBody3D"]
 script = ExtResource("1_udbmd")
 
-[node name="label_state" type="Label" parent="."]
-offset_left = 33.0
-offset_top = 22.0
-offset_right = 73.0
-offset_bottom = 45.0
-
 [node name="base" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976709, -0.000217199)
 

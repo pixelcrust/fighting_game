@@ -9,7 +9,8 @@ extends CharacterBody3D
 
 @onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
 @onready var base: RayCast3D = $base
-@onready var label_state: Label = $label_state
+@onready var ui_elements = preload("res://ui_elements/life_bar.tscn")
+
 @onready var base_rig: Node3D = $Base_Rig_003
 
 #controlls
@@ -38,6 +39,7 @@ var attack_state : int = 0
 var on_floor : bool = false
 
 func _ready():
+	
 	if player == 0:
 		key_left = "key_left_0"
 		key_right = "key_right_0"
@@ -52,11 +54,13 @@ func _ready():
 		key_duck = "key_duck_1"
 		key_attack1 = "key_attack1_1"
 		key_block = "key_block_1"
+	
+	#create ui elements with position.x player* 128 
 
 func _physics_process(delta):
 	
-	label_state.text = str(state)
-	
+
+	#print(str(hp))
 	#on floor
 	on_floor = base.is_colliding()
 	
@@ -171,4 +175,5 @@ func turn_right(delta):
 
 
 func being_hit_to_main_script(dmg: float, stagger: float) -> void:
-	pass # Replace with function body.
+	print_debug("primary script reached")
+	hp -= dmg
