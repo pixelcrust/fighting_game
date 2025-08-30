@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bqmg2wadkxros" path="res://ui_elements/life_bar.gd" id="1_24h4y"]
 
-[node name="LifeBar" type="Node2D"]
+[node name="LifeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_24h4y")
 
 [node name="label_hp" type="Label" parent="."]
