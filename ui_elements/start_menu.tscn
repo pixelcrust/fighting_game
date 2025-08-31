@@ -1,9 +1,109 @@
-[gd_scene format=3 uid="uid://c61nytq434cli"]
+[gd_scene load_steps=2 format=3 uid="uid://c61nytq434cli"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://csnyt2rqcvdcq" path="res://ui_elements/start_menu.gd" id="1_tga1u"]
+
+[node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tga1u")
+
+[node name="Mode" type="Node" parent="."]
+
+[node name="btn_local" type="Button" parent="Mode"]
+offset_left = 255.0
+offset_top = 370.0
+offset_right = 412.0
+offset_bottom = 412.0
+text = "Local"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_online" type="Button" parent="Mode"]
+offset_left = 619.0
+offset_top = 370.0
+offset_right = 776.0
+offset_bottom = 412.0
+text = "Online
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerCount" type="Node" parent="."]
+
+[node name="btn_1v1" type="Button" parent="PlayerCount"]
+offset_left = 201.0
+offset_top = 310.0
+offset_right = 358.0
+offset_bottom = 352.0
+text = "1 Player
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_2v2" type="Button" parent="PlayerCount"]
+offset_left = 364.0
+offset_top = 310.0
+offset_right = 521.0
+offset_bottom = 352.0
+text = "2 Players
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_3v3" type="Button" parent="PlayerCount"]
+offset_left = 528.0
+offset_top = 310.0
+offset_right = 685.0
+offset_bottom = 352.0
+text = "3 Players
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_4v4" type="Button" parent="PlayerCount"]
+offset_left = 691.0
+offset_top = 310.0
+offset_right = 848.0
+offset_bottom = 352.0
+text = "4 Players
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="ArenaSelect" type="Node" parent="."]
+
+[node name="btn_area1" type="Button" parent="ArenaSelect"]
+offset_left = 364.0
+offset_top = 257.0
+offset_right = 521.0
+offset_bottom = 299.0
+text = "Area 1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_area2" type="Button" parent="ArenaSelect"]
+offset_left = 527.0
+offset_top = 257.0
+offset_right = 684.0
+offset_bottom = 299.0
+text = "Area 2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="btn_character1" type="Button" parent="Characters"]
+offset_left = 205.0
+offset_top = 210.0
+offset_right = 362.0
+offset_bottom = 252.0
+text = "Character
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_character2" type="Button" parent="Characters"]
+offset_left = 688.0
+offset_top = 205.0
+offset_right = 845.0
+offset_bottom = 247.0
+text = "Character
+"
+metadata/_edit_use_anchors_ = true
