@@ -10,6 +10,7 @@ extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
 @onready var base: RayCast3D = $base
 @onready var ui_elements = preload("res://ui_elements/life_bar.tscn")
+@onready var ui = null
 
 @onready var base_rig: Node3D = $Base_Rig_003
 
@@ -56,7 +57,11 @@ func _ready():
 		key_block = "key_block_1"
 	
 	#create ui elements with position.x player* 128 
-
+	var new_ui = ui_elements.instantiate()
+	new_ui.global_position.x = 32+player*256
+	new_ui.player_id = self
+	add_child(new_ui)
+	
 func _physics_process(delta):
 	
 
