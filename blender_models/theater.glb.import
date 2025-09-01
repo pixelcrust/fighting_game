@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c32qapvo1mjs7"
-path="res://.godot/imported/theather_menu.glb-e3f353fd33d3a415759a98f30d4797b2.scn"
+uid="uid://dw7cqg2snypyk"
+path="res://.godot/imported/theater.glb-efbba74493e113b8b447e34f8754315d.scn"
 
 [deps]
 
-source_file="res://blender_models/theather_menu.glb"
-dest_files=["res://.godot/imported/theather_menu.glb-e3f353fd33d3a415759a98f30d4797b2.scn"]
+source_file="res://blender_models/theater.glb"
+dest_files=["res://.godot/imported/theater.glb-efbba74493e113b8b447e34f8754315d.scn"]
 
 [params]
 
