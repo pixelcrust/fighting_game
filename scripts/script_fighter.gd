@@ -171,12 +171,14 @@ func _being_hit(delta):
 	pass
 
 func turn_left(delta):
-	if rotation.y == 90:
-		rotation.y = 180
+	print(str(rad_to_deg($Base_Rig_003.rotation.y)))
+	if $Base_Rig_003.rotation.y == deg_to_rad(0.0):
+		$Base_Rig_003.rotation.y = deg_to_rad(180.0)
 
 func turn_right(delta):
-	if rotation.y == 180:
-		rotation.y = 90
+	print(str(rad_to_deg($Base_Rig_003.rotation.y)))
+	if $Base_Rig_003.rotation.y == deg_to_rad(180.0):
+		$Base_Rig_003.rotation.y = deg_to_rad(0.0)
 
 
 func being_hit_to_main_script(dmg: float, stagger: float) -> void:
