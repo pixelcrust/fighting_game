@@ -213,6 +213,12 @@ script = ExtResource("1_vywmo")
 
 [node name="Open_Theater2" parent="." instance=ExtResource("1_j62pw")]
 
+[node name="Skeleton3D" parent="Open_Theater2/Open_Theater" index="0"]
+bones/0/rotation = Quaternion(-0.00760535, 1.19206e-07, -9.06631e-10, 0.999971)
+bones/1/rotation = Quaternion(-0.00760535, 1.19206e-07, -9.06631e-10, 0.999971)
+bones/2/rotation = Quaternion(-0.00760535, 1.19206e-07, -9.06631e-10, 0.999971)
+bones/3/rotation = Quaternion(-0.00760535, 1.19206e-07, -9.06631e-10, 0.999971)
+
 [node name="theater" parent="." instance=ExtResource("2_dt4nh")]
 
 [node name="Lights_Out" type="Node3D" parent="theater"]
@@ -285,7 +291,140 @@ omni_range = 1.45911
 transform = Transform3D(-0.0567451, 0, 0.998389, 0, 1, 0, -0.998389, 0, -0.0567451, -1.15697, 2.87335, 10.5089)
 omni_range = 1.22231
 
+[node name="Lights_in" type="Node3D" parent="theater"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92078, 2.07356, 3.87831)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14889, 2.07356, 3.87831)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26783, 2.07356, 3.87831)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4886, 2.07356, 3.87831)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92078, 2.07356, 1.23515)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14889, 2.07356, 1.23515)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26783, 2.07356, 1.23515)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4886, 2.07356, 1.23515)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -13.5758, 2.07356, -0.55021)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -13.6008, 2.07356, 0.677638)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -13.6236, 2.07356, 1.79635)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -13.6485, 2.07356, 3.01681)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -16.7754, 2.62252, -2.09576)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -16.8004, 2.62252, -0.204647)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -16.8232, 2.62252, 1.72886)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="theater/Lights_in"]
+transform = Transform3D(0.020384, 0, 0.999792, 0, 1, 0, -0.999792, 0, 0.020384, -16.43, 2.62252, 3.61939)
+light_color = Color(0.999796, 0.916408, 0.812114, 1)
+shadow_enabled = true
+omni_range = 11.352
+omni_attenuation = 3.39
+omni_shadow_mode = 0
+
 [node name="Open_Cam2" parent="." instance=ExtResource("3_vywmo")]
+
+[node name="Skeleton3D" parent="Open_Cam2/Open_Cam" index="0"]
+bones/0/position = Vector3(10.6372, 0.196431, 19.0272)
 
 [node name="Camera" parent="Open_Cam2/Open_Cam/Skeleton3D" index="0"]
 transform = Transform3D(0.801859, 0.14414, 0.579867, 3.42727e-07, 0.970467, -0.241234, -0.597513, 0.193436, 0.778177, 10.6372, 0.196431, 19.0272)
@@ -343,7 +482,140 @@ text = "Local"
 layout_mode = 2
 text = "Online"
 
+[node name="Number_Players" type="Control" parent="Menu_Mode"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_o8rub")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_Mode/Number_Players"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.5
+offset_top = -20.0
+offset_right = 415.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1_player_btn" type="Button" parent="Menu_Mode/Number_Players/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o8rub")
+theme_override_constants/h_separation = 10
+text = "1 Player"
+
+[node name="2_player_btn" type="Button" parent="Menu_Mode/Number_Players/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o8rub")
+text = "2 Players"
+
+[node name="3_player_btn" type="Button" parent="Menu_Mode/Number_Players/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o8rub")
+text = "3 Players"
+
+[node name="4_player_btn" type="Button" parent="Menu_Mode/Number_Players/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o8rub")
+text = "4 Players"
+
+[node name="Arenas" type="Control" parent="Menu_Mode"]
+layout_mode = 3
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_o8rub")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_Mode/Arenas"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -12.0
+offset_right = 326.0
+offset_bottom = 12.0
+grow_vertical = 2
+theme = ExtResource("2_o8rub")
+
+[node name="Arena_01" type="Button" parent="Menu_Mode/Arenas/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o8rub")
+text = "My name is That Guy"
+
+[node name="Characters" type="Control" parent="Menu_Mode"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_Mode/Characters"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Usher" type="Button" parent="Menu_Mode/Characters/HBoxContainer"]
+layout_mode = 2
+
+[node name="Online_Connect" type="Control" parent="Menu_Mode"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_o8rub")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_Mode/Online_Connect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pass" type="Button" parent="Menu_Mode/Online_Connect/HBoxContainer"]
+layout_mode = 2
+text = "PASS"
+
+[connection signal="animation_finished" from="Open_Theater2/AnimationPlayer" to="." method="_on_animation_player_door_finished"]
+[connection signal="animation_finished" from="Open_Cam2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Menu_Mode/Mode/HBoxContainer/Local_btn" to="." method="_on_local_btn_pressed"]
+[connection signal="pressed" from="Menu_Mode/Mode/HBoxContainer/Online_btn" to="." method="_on_online_btn_pressed"]
+[connection signal="pressed" from="Menu_Mode/Number_Players/HBoxContainer/1_player_btn" to="." method="_on_one_player_pressed"]
+[connection signal="pressed" from="Menu_Mode/Number_Players/HBoxContainer/2_player_btn" to="." method="_on_two_player_pressed"]
+[connection signal="pressed" from="Menu_Mode/Number_Players/HBoxContainer/3_player_btn" to="." method="_on_three_player_pressed"]
+[connection signal="pressed" from="Menu_Mode/Number_Players/HBoxContainer/4_player_btn" to="." method="_on_four_player_pressed"]
+[connection signal="pressed" from="Menu_Mode/Arenas/HBoxContainer/Arena_01" to="." method="_on_arena_01_pressed"]
+[connection signal="pressed" from="Menu_Mode/Online_Connect/HBoxContainer/Pass" to="." method="_on_pass_pressed"]
 
 [editable path="Open_Theater2"]
 [editable path="theater"]
