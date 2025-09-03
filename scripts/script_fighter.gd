@@ -24,6 +24,7 @@ var key_block : String
 
 
 var state : int = 0
+var is_facing_right : bool = true
 var attack_state : int = 0
 
 """
@@ -80,10 +81,12 @@ func _physics_process(delta):
 			attack_state = 0
 			#input
 			if Input.is_action_pressed(key_left):
-				turn_left(delta)
+				if is_facing_right:
+					turn_left(delta)
 				velocity.x = - run_speed * delta * 100
 			elif Input.is_action_pressed(key_right):
-				turn_right(delta)
+				if !is_facing_right:
+					turn_right(delta)
 				velocity.x = run_speed * delta * 100
 			else:
 				velocity.x = 0
@@ -172,13 +175,13 @@ func _being_hit(delta):
 
 func turn_left(delta):
 	print(str(rad_to_deg($Base_Rig_003.rotation.y)))
-	if $Base_Rig_003.rotation.y == deg_to_rad(0.0):
-		$Base_Rig_003.rotation.y = deg_to_rad(180.0)
+	$Base_Rig_003.rotation.y = deg_to_rad(180.0)
+	is_facing_right = false
 
 func turn_right(delta):
 	print(str(rad_to_deg($Base_Rig_003.rotation.y)))
-	if $Base_Rig_003.rotation.y == deg_to_rad(180.0):
-		$Base_Rig_003.rotation.y = deg_to_rad(0.0)
+	$Base_Rig_003.rotation.y = deg_to_rad(0.0)
+	is_facing_right = true
 
 
 func being_hit_to_main_script(dmg: float, stagger: float) -> void:
