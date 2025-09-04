@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var stance : float = 100
 @export var run_speed : float = 3.0
 @export var jump_speed : float = 4.0
+@export var air_strafe_speed :float = 2.0
 
 @onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
 @onready var base: RayCast3D = $base
@@ -102,8 +103,24 @@ func _physics_process(delta):
 			attack_state = 1
 			if velocity.y <= 0:
 				state = 2
+			if Input.is_action_pressed(key_left):
+				if is_facing_right:
+					turn_left(delta)
+				velocity.x = - air_strafe_speed * delta * 100
+			elif Input.is_action_pressed(key_right):
+				if !is_facing_right:
+					turn_right(delta)
+				velocity.x = air_strafe_speed * delta * 100
 		2: # ..falling
 			attack_state = 2
+			if Input.is_action_pressed(key_left):
+				if is_facing_right:
+					turn_left(delta)
+				velocity.x = - air_strafe_speed * delta * 100
+			elif Input.is_action_pressed(key_right):
+				if !is_facing_right:
+					turn_right(delta)
+				velocity.x = air_strafe_speed * delta * 100
 			if on_floor:
 				state = 0
 		3: # ..lying on the floor
