@@ -25,6 +25,7 @@ var key_block : String
 
 
 var state : int = 0
+var state_before : int = 0
 var is_facing_right : bool = true
 var attack_state : int = 0
 
@@ -98,6 +99,8 @@ func _physics_process(delta):
 				state = 4
 			if Input.is_action_pressed(key_attack1):
 				state = 5
+			if Input.is_action_pressed(key_block):
+				state = 7
 				
 		1: # ..jumping upward
 			attack_state = 1
@@ -145,7 +148,7 @@ func _physics_process(delta):
 				_:
 					pass
 		6: # .. being hit
-			#determine how badly the fighter was hit, with stance
+			state = state_before
 			pass
 		7: # ..blocking
 			pass
@@ -204,3 +207,5 @@ func turn_right(delta):
 func being_hit_to_main_script(dmg: float, stagger: float) -> void:
 	print_debug("primary script reached")
 	hp -= dmg
+	state_before = state
+	state = 6
