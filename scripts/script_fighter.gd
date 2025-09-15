@@ -13,7 +13,7 @@ extends CharacterBody3D
 @onready var ui_elements = preload("res://ui_elements/life_bar.tscn")
 @onready var ui = null
 
-@onready var base_rig: Node3D = $Base_Rig_003
+@onready var base_rig: Node3D = $Base_Rig_004
 
 #controlls
 var key_left : String
@@ -194,13 +194,13 @@ func _being_hit(delta):
 	pass
 
 func turn_left(delta):
-	print(str(rad_to_deg($Base_Rig_003.rotation.y)))
-	$Base_Rig_003.rotation.y = deg_to_rad(180.0)
+	print(str(rad_to_deg(base_rig.rotation.y)))
+	base_rig.rotation.y = deg_to_rad(180.0)
 	is_facing_right = false
 
 func turn_right(delta):
-	print(str(rad_to_deg($Base_Rig_003.rotation.y)))
-	$Base_Rig_003.rotation.y = deg_to_rad(0.0)
+	print(str(rad_to_deg(base_rig.rotation.y)))
+	base_rig.rotation.y = deg_to_rad(0.0)
 	is_facing_right = true
 
 

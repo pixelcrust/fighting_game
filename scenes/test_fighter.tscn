@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5m04rkbekqft"]
+[gd_scene load_steps=5 format=3 uid="uid://b5m04rkbekqft"]
 
 [ext_resource type="Script" uid="uid://cpvr6he6n03xx" path="res://scripts/script_fighter.gd" id="1_udbmd"]
 [ext_resource type="PackedScene" uid="uid://dp184cddhtubo" path="res://scenes/character_rig.tscn" id="2_7e5go"]
-[ext_resource type="Script" uid="uid://bsomap8b2rjo3" path="res://scenes/script_fighter2.gd" id="3_ujomp"]
-[ext_resource type="PackedScene" uid="uid://ccu6mub00f8g1" path="res://blender_models/Base_Rig.004.glb" id="4_qh8pm"]
-[ext_resource type="Script" uid="uid://2pa08th654e6" path="res://scripts/character_rig2.gd" id="5_jbjpy"]
+[ext_resource type="PackedScene" uid="uid://c5cuc6byjvslp" path="res://base_rig_004.tscn" id="3_uxbsr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e5go"]
 radius = 0.3
@@ -21,21 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
 shape = SubResource("CapsuleShape3D_7e5go")
 
 [node name="Base_Rig_003" parent="." instance=ExtResource("2_7e5go")]
+visible = false
 
-[node name="test_fighter2" type="CharacterBody3D" parent="."]
-script = ExtResource("3_ujomp")
-
-[node name="Base_Rig_004" parent="test_fighter2" instance=ExtResource("4_qh8pm")]
-script = ExtResource("5_jbjpy")
-
-[node name="base" type="RayCast3D" parent="test_fighter2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976709, -0.000217199)
-
-[node name="movement_collision_shape" type="CollisionShape3D" parent="test_fighter2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
-shape = SubResource("CapsuleShape3D_7e5go")
+[node name="Base_Rig_004" parent="." instance=ExtResource("3_uxbsr")]
 
 [connection signal="being_hit_to_main_script" from="Base_Rig_003" to="." method="being_hit_to_main_script"]
-[connection signal="being_hit_to_main_script" from="test_fighter2/Base_Rig_004" to="test_fighter2" method="_on_base_rig_004_being_hit_to_main_script"]
-
-[editable path="test_fighter2/Base_Rig_004"]
