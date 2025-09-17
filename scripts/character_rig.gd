@@ -4,6 +4,8 @@ extends Node3D
 @onready var skeleton_3d: Skeleton3D = $rig_base/Skeleton3D
 
 signal being_hit_to_main_script(dmg : float,stagger : float)
+signal getting_parried
+signal getting_blocked
 
 func _process(delta):
 	pass
@@ -18,5 +20,21 @@ func _on_physical_bone_being_hit(dmg : float, stagger : float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	if is_ancestor_of(body) != true:
+		
+		#if hurtbox/bone
 		body.get_hit(10,10)
 		print_debug("body in hitbox")
+		
+
+
+func area_entered(area: Area3D) -> void:
+		if area.monitoring:
+			#if blockbox
+			if area.is_in_group("block"):
+
+				emit_signal("getting_blocked")
+			#if parrybox
+			if area.is_in_group("parry"):
+			
+				emit_signal("getting_parried")
+			

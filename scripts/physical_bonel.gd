@@ -1,1 +1,0 @@
-extends PhysicalBone3D

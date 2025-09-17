@@ -13,7 +13,7 @@ extends CharacterBody3D
 @onready var ui_elements = preload("res://ui_elements/life_bar.tscn")
 @onready var ui = null
 
-@onready var base_rig: Node3D = $Base_Rig_004
+@onready var base_rig: Node3D = $Base_Rig_003
 
 #controlls
 var key_left : String
@@ -209,3 +209,11 @@ func being_hit_to_main_script(dmg: float, stagger: float) -> void:
 	hp -= dmg
 	state_before = state
 	state = 6
+
+func getting_blocked() -> void:
+	
+	print_debug("blocked lol")
+
+
+func getting_parried() -> void:
+	print_debug("parried lol")

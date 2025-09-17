@@ -19,8 +19,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
 shape = SubResource("CapsuleShape3D_7e5go")
 
 [node name="Base_Rig_003" parent="." instance=ExtResource("2_7e5go")]
-visible = false
 
 [node name="Base_Rig_004" parent="." instance=ExtResource("3_uxbsr")]
+visible = false
 
 [connection signal="being_hit_to_main_script" from="Base_Rig_003" to="." method="being_hit_to_main_script"]
+[connection signal="getting_blocked" from="Base_Rig_003" to="." method="getting_blocked"]
+[connection signal="getting_parried" from="Base_Rig_003" to="." method="getting_parried"]
