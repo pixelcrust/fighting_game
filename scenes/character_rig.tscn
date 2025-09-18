@@ -1851,11 +1851,11 @@ skin = SubResource("Skin_mmcex")
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="rig_base/Skeleton3D"]
 
 [node name="Physical Bone torso_crtl" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.9999999, 2.3416433e-09, 4.7683716e-07, -4.7683716e-07, 6.2683604e-08, -0.9999999, -2.341702e-09, -1, -6.268362e-08, 7.50646e-07, 0.03247936, -1.11785)
+transform = Transform3D(-0.9999999, 2.3785844e-09, 4.7683716e-07, -4.7683716e-07, 6.2589585e-08, -0.9999999, -2.378643e-09, -1, -6.2589606e-08, 7.50646e-07, 0.03247936, -1.11785)
 collision_layer = 2
 collision_mask = 2
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6986686e-07, -2.4960893e-09, 0.039820403)
-body_offset = Transform3D(-0.99999976, 2.3416433e-09, 4.7683716e-07, 4.7683716e-07, -6.2683604e-08, 0.99999976, 2.3417002e-09, 1, 6.268364e-08, 7.508788e-07, -0.03982039, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6986686e-07, -2.4923454e-09, 0.039820403)
+body_offset = Transform3D(-0.99999976, 2.3785809e-09, 4.7683716e-07, 4.7683716e-07, -6.258959e-08, 0.99999976, 2.3786413e-09, 1, 6.258962e-08, 7.508788e-07, -0.03982039, 0)
 bone_name = "torso_crtl"
 script = ExtResource("3_onypb")
 
@@ -1901,12 +1901,12 @@ shape = SubResource("CapsuleShape3D_jdbjt")
 debug_color = Color(0.878299, 0.000386779, 0.827781, 0.42)
 
 [node name="Physical Bone thigh_R" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.9942734, 0.008552879, 0.10652109, -0.012124419, 0.98132694, -0.19196354, -0.10617388, -0.19215582, -0.9756041, -0.11120951, 0.015776766, -0.7812068)
+transform = Transform3D(-0.9942734, 0.008552909, 0.10652108, -0.012124419, 0.98132694, -0.19196352, -0.10617388, -0.19215581, -0.9756041, -0.11120951, 0.015776766, -0.7812068)
 collision_layer = 2
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7074317e-07, -1.7498698e-05, 0.19107811)
-body_offset = Transform3D(0.99999964, -3.08156e-05, 4.2319298e-05, 4.2244792e-05, 8.7842345e-05, -1.0000001, 3.0696392e-05, 0.9999997, 8.799136e-05, -8.657575e-06, 0.19107813, 6.854534e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.671862e-07, -1.750724e-05, 0.1910781)
+body_offset = Transform3D(0.99999964, -3.0755997e-05, 4.2337924e-05, 4.2244792e-05, 8.7842345e-05, -1.0000001, 3.0696392e-05, 0.99999964, 8.803606e-05, -8.657575e-06, 0.19107813, 6.854534e-07)
 bone_name = "thigh.R"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -2515,11 +2515,11 @@ shape = SubResource("CapsuleShape3D_kdqqd")
 debug_color = Color(0.878299, 0.000386779, 0.827781, 0.42)
 
 [node name="Physical Bone ik_leg_R" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.9999999, 2.4285782e-09, 4.7683716e-07, -4.7683716e-07, -1.3158099e-06, -0.9999999, -2.4279476e-09, -1, 1.3158102e-06, -0.17299107, 0.07282076, -0.102728836)
+transform = Transform3D(-0.9999999, 2.4655264e-09, 4.7683716e-07, -4.7683716e-07, -1.3149914e-06, -0.9999999, -2.4648887e-09, -1, 1.3149917e-06, -0.17299107, 0.07282076, -0.102728836)
 collision_layer = 2
 collision_mask = 2
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3919423e-05, 1.6835165e-07, 0.0036381716)
-body_offset = Transform3D(-0.99999976, 2.4285782e-09, 4.7683716e-07, 4.7683716e-07, 1.2200909e-06, 0.99999976, 2.427992e-09, 1, -1.2200913e-06, 1.3917685e-05, -0.0036381707, -1.6391277e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3919423e-05, 1.6834866e-07, 0.0036381716)
+body_offset = Transform3D(-0.99999976, 2.4655264e-09, 4.7683716e-07, 4.7683716e-07, 1.2192722e-06, 0.99999976, 2.4649331e-09, 1, -1.2192726e-06, 1.3917685e-05, -0.0036381707, -1.6391277e-07)
 bone_name = "ik_leg.R"
 script = ExtResource("3_onypb")
 

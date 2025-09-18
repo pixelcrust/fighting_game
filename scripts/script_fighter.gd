@@ -10,6 +10,9 @@ extends CharacterBody3D
 
 @onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
 @onready var base: RayCast3D = $base
+@onready var walljump_raycast: RayCast3D = $Base_Rig_003/walljump_raycast
+
+
 @onready var ui_elements = preload("res://ui_elements/life_bar.tscn")
 @onready var ui = null
 
@@ -93,8 +96,7 @@ func _physics_process(delta):
 			else:
 				velocity.x = 0
 			if Input.is_action_pressed(key_jump) && on_floor:
-				velocity.y = jump_speed * delta * 100
-				state = 1
+				_jump(delta)
 			if Input.is_action_pressed(key_duck):
 				state = 4
 			if Input.is_action_pressed(key_attack1):
@@ -115,6 +117,8 @@ func _physics_process(delta):
 					turn_right(delta)
 				velocity.x = air_strafe_speed * delta * 100
 		2: # ..falling
+			if Input.is_action_pressed(key_jump) && walljump_raycast.is_colliding():
+				_jump(delta)
 			attack_state = 2
 			if Input.is_action_pressed(key_left):
 				if is_facing_right:
@@ -175,6 +179,10 @@ func _attack_normal(delta):
 	await get_tree().create_timer(1.0667).timeout
 	state = 0
 
+func _jump(delta):
+	velocity.y = jump_speed * delta * 100
+	state = 1
+	
 func _attack_jump(delta):
 	pass
 

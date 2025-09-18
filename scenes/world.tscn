@@ -31,3 +31,15 @@ transform = Transform3D(-0.122684, 0.598071, 0.791997, 0, -0.798026, 0.602623, 0
 [node name="test_fighter2" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.15323, 2.94547, 2.18245)
 player = 1
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.754969, 2.5825195, 0)
+use_collision = true
+size = Vector3(3.8447266, 6.165039, 10)
+material = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0581865, 7.712398, 0.4189453)
+use_collision = true
+size = Vector3(2.1295166, 5.4630737, 9.162109)
+material = SubResource("StandardMaterial3D_fj7yv")
