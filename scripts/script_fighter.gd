@@ -25,6 +25,7 @@ var key_jump : String
 var key_duck : String
 var key_attack1 : String
 var key_block : String
+var key_parry : String
 
 
 var state : int = 0
@@ -54,6 +55,7 @@ func _ready():
 		key_duck = "key_duck_0"
 		key_attack1 = "key_attack1_0"
 		key_block = "key_block_0"
+		key_parry = "key_parry_0"
 	elif player == 1:
 		key_left = "key_left_1"
 		key_right = "key_right_1"
@@ -61,6 +63,7 @@ func _ready():
 		key_duck = "key_duck_1"
 		key_attack1 = "key_attack1_1"
 		key_block = "key_block_1"
+		key_parry = "key_parry_1"
 	
 	#create ui elements with position.x player* 128 
 	var new_ui = ui_elements.instantiate()
@@ -103,7 +106,8 @@ func _physics_process(delta):
 				state = 5
 			if Input.is_action_pressed(key_block):
 				state = 7
-				
+			if Input.is_action_just_pressed(key_parry):
+				state = 8
 		1: # ..jumping upward
 			attack_state = 1
 			if velocity.y <= 0:
@@ -196,6 +200,9 @@ func _attack_lying(delta):
 	pass
 	
 func _block(delta):
+	pass
+	
+func _parry(delta):
 	pass
 
 func _being_hit(delta):
