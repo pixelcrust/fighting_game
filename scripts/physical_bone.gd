@@ -10,7 +10,6 @@ func _process(delta):
 
 	pass
 
-func get_hit(dmg : float,stagger : float):
-	
-	emit_signal("bone_hit",dmg,stagger)
-	print_debug("emit signal pls")
+func get_hit(dmg : float,stagger : float, being_blocked : bool):
+	if being_blocked == false:
+		emit_signal("bone_hit",dmg,stagger)

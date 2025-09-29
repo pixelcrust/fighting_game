@@ -8,7 +8,7 @@
 radius = 0.3
 height = 1.8
 
-[node name="test_fighter" type="CharacterBody3D"]
+[node name="test_fighter" type="CharacterBody3D" groups=["fighter"]]
 script = ExtResource("1_udbmd")
 
 [node name="base" type="RayCast3D" parent="."]

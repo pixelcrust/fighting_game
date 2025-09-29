@@ -8,6 +8,8 @@ extends CharacterBody3D
 @export var jump_speed : float = 4.0
 @export var air_strafe_speed :float = 2.0
 
+
+
 @onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
 @onready var base: RayCast3D = $base
 @onready var walljump_raycast: RayCast3D = $Base_Rig_003/walljump_raycast
@@ -33,6 +35,10 @@ var state_before : int = 0
 var is_facing_right : bool = true
 var attack_state : int = 0
 
+var being_blocked : bool = false
+var being_parried : bool = false
+
+
 """
 0.. standing
 1.. jumping upward
@@ -43,6 +49,7 @@ var attack_state : int = 0
 6.. being hit
 7.. block
 8.. parry
+9.. being parried
 """
 var on_floor : bool = false
 
@@ -162,6 +169,10 @@ func _physics_process(delta):
 			pass
 		8: #..parrying
 			pass
+		9: #being parried
+			being_parried = false
+			await get_tree().create_timer(1.0667).timeout
+			state = 0
 		_:
 			pass
 	
@@ -180,6 +191,9 @@ func _attack_normal(delta):
 	animation_player.play("punch")
 	#if animation_player.animation_finished("punch"):
 		#state = 0
+	if being_blocked == true:
+		#disable dmg
+		pass
 	await get_tree().create_timer(1.0667).timeout
 	state = 0
 
@@ -226,9 +240,11 @@ func being_hit_to_main_script(dmg: float, stagger: float) -> void:
 	state = 6
 
 func getting_blocked() -> void:
-	
+	being_blocked = true
 	print_debug("blocked lol")
 
 
 func getting_parried() -> void:
+	being_parried = true
+	state = 9
 	print_debug("parried lol")
