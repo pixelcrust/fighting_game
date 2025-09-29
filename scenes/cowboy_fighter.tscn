@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50vqlhwfq2h8"]
+
+[ext_resource type="PackedScene" uid="uid://cyxho4e4n4ktg" path="res://blender_models/Cowboy_Rig.001.glb" id="1_p4s2e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e5go"]
+radius = 0.3
+height = 1.8
+
+[node name="cowboy_fighter" type="CharacterBody3D"]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+
+[node name="base" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.976709, -0.000217199)
+
+[node name="movement_collision_shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.903022, 0)
+shape = SubResource("CapsuleShape3D_7e5go")
+
+[node name="Cowboy_Rig_001" parent="." instance=ExtResource("1_p4s2e")]
