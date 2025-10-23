@@ -427,7 +427,7 @@ omni_shadow_mode = 0
 bones/0/position = Vector3(10.6372, 0.196431, 19.0272)
 
 [node name="Camera" parent="Open_Cam2/Open_Cam/Skeleton3D" index="0"]
-transform = Transform3D(0.801859, 0.14414, 0.579867, 3.42727e-07, 0.970467, -0.241234, -0.597513, 0.193436, 0.778177, 10.6372, 0.196431, 19.0272)
+transform = Transform3D(0.8018589, 0.14414027, 0.57986706, 3.427267e-07, 0.97046685, -0.24123399, -0.59751344, 0.19343582, 0.77817744, 10.6372, 0.196431, 19.0272)
 
 [node name="Camera" parent="Open_Cam2/Open_Cam/Skeleton3D/Camera" index="0"]
 environment = SubResource("Environment_vywmo")

@@ -63,19 +63,19 @@ func _on_online_btn_pressed() -> void:
 	mode_set_online = true
 
 func _on_one_player_pressed() -> void:
-	player_count += 1
+	player_count = 1
 	num_set_stored = true
 	
 func _on_two_player_pressed() -> void:
-	player_count += 2
+	player_count = 2
 	num_set_stored = true
 	
 func _on_three_player_pressed() -> void:
-	player_count += 3
+	player_count = 3
 	num_set_stored = true
 	
 func _on_four_player_pressed() -> void:
-	player_count += 4
+	player_count = 4
 	num_set_stored = true
 
 func _on_arena_01_pressed() -> void:

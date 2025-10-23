@@ -195,6 +195,7 @@ func _attack_normal(delta):
 		#disable dmg
 		pass
 	await get_tree().create_timer(1.0667).timeout
+	being_blocked = false
 	state = 0
 
 func _jump(delta):
@@ -241,6 +242,7 @@ func being_hit_to_main_script(dmg: float, stagger: float) -> void:
 
 func getting_blocked() -> void:
 	being_blocked = true
+	base_rig.being_blocked = true
 	print_debug("blocked lol")
 
 
