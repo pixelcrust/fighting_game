@@ -27,6 +27,7 @@ func _ready() -> void:
 	num_player.visible = false
 	arena.visible = false
 	connect.visible = false
+	characters.visible = false
 
 func _process(_delta: float) -> void:
 	if mode_set_ready == true:
@@ -111,3 +112,7 @@ func _on_animation_player_animation_finished(anim_name) -> void:
 
 func _on_animation_player_door_finished(anim_name: StringName) -> void:
 	pass # Replace with function body.
+
+
+func _on_usher_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/world.tscn")

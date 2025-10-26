@@ -424,10 +424,11 @@ omni_shadow_mode = 0
 [node name="Open_Cam2" parent="." instance=ExtResource("3_vywmo")]
 
 [node name="Skeleton3D" parent="Open_Cam2/Open_Cam" index="0"]
-bones/0/position = Vector3(10.6372, 0.196431, 19.0272)
+bones/0/position = Vector3(-2.3710003, 1.55073, 5.7992706)
+bones/0/rotation = Quaternion(-0.06400581, -0.38012806, 0.016497903, 0.9225691)
 
 [node name="Camera" parent="Open_Cam2/Open_Cam/Skeleton3D" index="0"]
-transform = Transform3D(0.8018589, 0.14414027, 0.57986706, 3.427267e-07, 0.97046685, -0.24123399, -0.59751344, 0.19343582, 0.77817744, 10.6372, 0.196431, 19.0272)
+transform = Transform3D(0.99004054, -0.015994385, -0.13987067, 0.00035708398, 0.99380726, -0.11111562, 0.14078182, 0.10995902, 0.98391527, -2.3710003, 1.55073, 5.7992706)
 
 [node name="Camera" parent="Open_Cam2/Open_Cam/Skeleton3D/Camera" index="0"]
 environment = SubResource("Environment_vywmo")
@@ -557,7 +558,7 @@ theme = ExtResource("2_o8rub")
 [node name="Arena_01" type="Button" parent="Menu_Mode/Arenas/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_o8rub")
-text = "My name is That Guy"
+text = "World One"
 
 [node name="Characters" type="Control" parent="Menu_Mode"]
 layout_mode = 3
@@ -567,11 +568,15 @@ offset_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu_Mode/Characters"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 70.0
+offset_top = 304.0
+offset_right = 253.0
+offset_bottom = 344.0
 
 [node name="Usher" type="Button" parent="Menu_Mode/Characters/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_o8rub")
+text = "John Brown"
 
 [node name="Online_Connect" type="Control" parent="Menu_Mode"]
 layout_mode = 3
@@ -615,6 +620,7 @@ text = "PASS"
 [connection signal="pressed" from="Menu_Mode/Number_Players/HBoxContainer/3_player_btn" to="." method="_on_three_player_pressed"]
 [connection signal="pressed" from="Menu_Mode/Number_Players/HBoxContainer/4_player_btn" to="." method="_on_four_player_pressed"]
 [connection signal="pressed" from="Menu_Mode/Arenas/HBoxContainer/Arena_01" to="." method="_on_arena_01_pressed"]
+[connection signal="pressed" from="Menu_Mode/Characters/HBoxContainer/Usher" to="." method="_on_usher_pressed"]
 [connection signal="pressed" from="Menu_Mode/Online_Connect/HBoxContainer/Pass" to="." method="_on_pass_pressed"]
 
 [editable path="Open_Theater2"]
