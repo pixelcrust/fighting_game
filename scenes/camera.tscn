@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://ynidwltvqkaa"]
+[gd_scene load_steps=2 format=3 uid="uid://ynidwltvqkaa"]
+
+[ext_resource type="Script" uid="uid://bbcre3ky746mh" path="res://scripts/camera.gd" id="1_cvpoc"]
 
 [node name="Camera" type="Node3D"]
+script = ExtResource("1_cvpoc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+fov = 100.0

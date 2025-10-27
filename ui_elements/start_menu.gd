@@ -27,6 +27,7 @@ func _ready() -> void:
 	num_player.visible = false
 	arena.visible = false
 	connect.visible = false
+	characters.visible = false
 
 func _process(_delta: float) -> void:
 	if mode_set_ready == true:
@@ -63,19 +64,19 @@ func _on_online_btn_pressed() -> void:
 	mode_set_online = true
 
 func _on_one_player_pressed() -> void:
-	player_count += 1
+	player_count = 1
 	num_set_stored = true
 	
 func _on_two_player_pressed() -> void:
-	player_count += 2
+	player_count = 2
 	num_set_stored = true
 	
 func _on_three_player_pressed() -> void:
-	player_count += 3
+	player_count = 3
 	num_set_stored = true
 	
 func _on_four_player_pressed() -> void:
-	player_count += 4
+	player_count = 4
 	num_set_stored = true
 
 func _on_arena_01_pressed() -> void:
@@ -111,3 +112,7 @@ func _on_animation_player_animation_finished(anim_name) -> void:
 
 func _on_animation_player_door_finished(anim_name: StringName) -> void:
 	pass # Replace with function body.
+
+
+func _on_usher_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/world.tscn")
