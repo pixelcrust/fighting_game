@@ -15,6 +15,10 @@ run/main_scene="uid://dra88ij7j8bot"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+autoload="*res://autoload.gd"
+
 [input]
 
 key_left_0={

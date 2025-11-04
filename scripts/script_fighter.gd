@@ -10,15 +10,15 @@ extends CharacterBody3D
 
 
 
-@onready var animation_player: AnimationPlayer = $Base_Rig_003.animation_player
+@onready var animation_player: AnimationPlayer = $RIG.animation_player
 @onready var base: RayCast3D = $base
-@onready var walljump_raycast: RayCast3D = $Base_Rig_003/walljump_raycast
+@onready var walljump_raycast: RayCast3D = $RIG/walljump_raycast
 
 
 @onready var ui_elements = preload("res://ui_elements/life_bar.tscn")
 @onready var ui = null
 
-@onready var base_rig: Node3D = $Base_Rig_003
+@onready var base_rig: Node3D = $RIG
 
 #controlls
 var key_left : String

@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=4 uid="uid://dp184cddhtubo"]
 
-[ext_resource type="Script" uid="uid://bqxrflxmu3o5q" path="res://scripts/character_rig.gd" id="2_lwj41"]
+[ext_resource type="Script" uid="uid://bqxrflxmu3o5q" path="res://scripts/rig.gd" id="2_lwj41"]
 [ext_resource type="Script" uid="uid://dm2ch3xio0bmc" path="res://scripts/physical_bone.gd" id="3_onypb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvxxm"]
@@ -1851,11 +1851,11 @@ skin = SubResource("Skin_mmcex")
 [node name="PhysicalBoneSimulator3D" type="PhysicalBoneSimulator3D" parent="rig_base/Skeleton3D"]
 
 [node name="Physical Bone torso_crtl" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.9999999, 2.9013094e-09, 4.7683716e-07, -4.7683716e-07, 6.130178e-08, -0.9999999, -2.901368e-09, -1, -6.1301805e-08, 7.50646e-07, 0.03247936, -1.11785)
+transform = Transform3D(-0.9999999, 2.943061e-09, 4.7683716e-07, -4.7683716e-07, 6.1201575e-08, -0.9999999, -2.9431195e-09, -1, -6.120159e-08, 7.50646e-07, 0.03247936, -1.11785)
 collision_layer = 2
 collision_mask = 2
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6986686e-07, -2.4410647e-09, 0.039820403)
-body_offset = Transform3D(-0.99999976, 2.9013059e-09, 4.7683716e-07, 4.7683716e-07, -6.130179e-08, 0.99999976, 2.9013663e-09, 1, 6.1301805e-08, 7.508788e-07, -0.03982039, 0)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6986686e-07, -2.4370752e-09, 0.039820403)
+body_offset = Transform3D(-0.99999976, 2.9430645e-09, 4.7683716e-07, 4.7683716e-07, -6.1201575e-08, 0.99999976, 2.9431177e-09, 1, 6.120162e-08, 7.508788e-07, -0.03982039, 0)
 bone_name = "torso_crtl"
 script = ExtResource("3_onypb")
 
@@ -1865,12 +1865,12 @@ shape = SubResource("CapsuleShape3D_ujp2s")
 debug_color = Color(0.878299, 0.000386779, 0.827781, 0.42)
 
 [node name="Physical Bone hips" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.358014, -0.81420135, -0.45705777, -0.87478894, 0.121343315, 0.4690627, -0.3264507, 0.5677603, -0.7556972, 0.045439497, 0.025566503, -1.0425454)
+transform = Transform3D(-0.358014, -0.8142014, -0.4570577, -0.87478894, 0.12134336, 0.46906272, -0.3264507, 0.5677603, -0.7556972, 0.045439497, 0.025566503, -1.0425454)
 collision_layer = 2
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.466623e-05, -8.526165e-05, 0.09960425)
-body_offset = Transform3D(-0.35801396, -0.8142014, -0.4570578, -4.261732e-05, 0.48951834, -0.87199295, 0.9337161, -0.31216624, -0.175289, 0.045439497, 0.08689594, 0.017474622)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4668093e-05, -8.525746e-05, 0.09960425)
+body_offset = Transform3D(-0.35801396, -0.8142014, -0.4570578, -4.261732e-05, 0.48951828, -0.871993, 0.9337161, -0.31216624, -0.17528898, 0.045439497, 0.08689594, 0.017474622)
 bone_name = "hips"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -2261,12 +2261,12 @@ shape = SubResource("CapsuleShape3D_d3usw")
 debug_color = Color(0.878299, 0.000386779, 0.827781, 0.42)
 
 [node name="Physical Bone arm_2_R" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.6653823, 0.541243, -0.5141226, 0.742611, 0.40968215, -0.52980095, -0.07612425, -0.7343135, -0.6745286, -0.28039792, -0.056567565, -1.194788)
+transform = Transform3D(-0.6653823, 0.541243, -0.51412255, 0.742611, 0.40968215, -0.52980095, -0.07612425, -0.7343135, -0.6745286, -0.28039792, -0.056567565, -1.194788)
 collision_layer = 2
 collision_mask = 2
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088174606, 8.120299e-05, 0.114185736)
-body_offset = Transform3D(0.9999998, 7.912517e-06, -7.739663e-05, -7.739663e-05, -4.887581e-06, -0.99999964, -7.95722e-06, 0.99999976, -4.9471855e-06, 0.0008905828, 0.11418563, -8.0645084e-05)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088175957, 8.119618e-05, 0.11418573)
+body_offset = Transform3D(0.9999998, 7.912517e-06, -7.727742e-05, -7.739663e-05, -4.887581e-06, -0.9999997, -7.95722e-06, 0.99999976, -4.887581e-06, 0.0008905828, 0.11418563, -8.0645084e-05)
 bone_name = "arm_2.R"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
@@ -2515,11 +2515,11 @@ shape = SubResource("CapsuleShape3D_kdqqd")
 debug_color = Color(0.878299, 0.000386779, 0.827781, 0.42)
 
 [node name="Physical Bone ik_leg_R" type="PhysicalBone3D" parent="rig_base/Skeleton3D/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.9999999, 2.9882017e-09, 4.7683716e-07, -4.7683716e-07, -1.3040192e-06, -0.9999999, -2.9876137e-09, -1, 1.3040194e-06, -0.17299107, 0.07282076, -0.102728836)
+transform = Transform3D(-0.9999999, 3.0300384e-09, 4.7683716e-07, -4.7683716e-07, -1.3032059e-06, -0.9999999, -3.0293652e-09, -1, 1.3032061e-06, -0.17299107, 0.07282076, -0.102728836)
 collision_layer = 2
 collision_mask = 2
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3919423e-05, 1.6830873e-07, 0.0036381716)
-body_offset = Transform3D(-0.99999976, 2.9883154e-09, 4.7683716e-07, 4.7683716e-07, 1.2083001e-06, 0.99999976, 2.9876581e-09, 1, -1.2083004e-06, 1.3917685e-05, -0.0036381707, -1.6391277e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3919423e-05, 1.6830577e-07, 0.0036381716)
+body_offset = Transform3D(-0.99999976, 3.029868e-09, 4.7683716e-07, 4.7683716e-07, 1.2074868e-06, 0.99999976, 3.0294096e-09, 1, -1.2074871e-06, 1.3917685e-05, -0.0036381707, -1.6391277e-07)
 bone_name = "ik_leg.R"
 script = ExtResource("3_onypb")
 
@@ -2594,8 +2594,8 @@ libraries = {
 [connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone shoulder_R" to="." method="_on_physical_bone_being_hit"]
 [connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_1_R" to="." method="_on_physical_bone_being_hit"]
 [connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_2_R" to="." method="_on_physical_bone_being_hit"]
-[connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R" to="." method="_on_physical_bone_hand_r_bone_hit"]
 [connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R" to="." method="_on_physical_bone_being_hit"]
+[connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R" to="." method="_on_physical_bone_hand_r_bone_hit"]
 [connection signal="area_entered" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R/Area3D" to="." method="area_entered"]
 [connection signal="body_entered" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone hand_R/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="bone_hit" from="rig_base/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone pinky_1_R" to="." method="_on_physical_bone_being_hit"]
