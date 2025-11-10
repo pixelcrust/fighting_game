@@ -127,7 +127,7 @@ func _physics_process(delta):
 				if !is_facing_right:
 					turn_right(delta)
 				velocity.x = air_strafe_speed * delta * 100
-		2: # ..falling
+		2: # ..jump down/falling?
 			if Input.is_action_pressed(key_jump) && walljump_raycast.is_colliding():
 				_jump(delta)
 			attack_state = 2
@@ -177,13 +177,19 @@ func _physics_process(delta):
 			pass
 	
 	#animations
-	if state == 0 and velocity.x != 0:
-		base_rig.animation_player.play("run")
-	elif state == 0 and velocity.x == 0:
-		base_rig.animation_player.play("idle")
-	elif state == 1:
-		base_rig.animation_player.play("jump")
-		
+	match state:
+		0:
+			if velocity.x == 0:
+				base_rig.animation_player.play("idle")
+			else:
+				base_rig.animation_player.play("run")
+		1:
+			base_rig.animation_player.play("jump_up")
+		2: #
+			base_rig.animation_player.play("jump_down")
+		4:
+			base_rig.animation_player.play("crouch_walk")
+			
 	move_and_slide()
 	
 func _attack_normal(delta):
