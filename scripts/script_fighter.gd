@@ -153,13 +153,13 @@ func _physics_process(delta):
 				0:
 					_attack_normal(delta)
 				1:
-					pass
+					_attack_jump(delta)
 				2:
-					pass
+					_attack_jump(delta)
 				3:
 					pass
 				4:
-					pass
+					_attack_crouch(delta)
 				_:
 					pass
 		6: # .. being hit
@@ -194,7 +194,7 @@ func _physics_process(delta):
 	
 func _attack_normal(delta):
 	
-	animation_player.play("punch")
+	animation_player.play("attack_01")
 	#if animation_player.animation_finished("punch"):
 		#state = 0
 	if being_blocked == true:
@@ -209,10 +209,26 @@ func _jump(delta):
 	state = 1
 	
 func _attack_jump(delta):
-	pass
+	animation_player.play("attack_02")
+	#if animation_player.animation_finished("punch"):
+		#state = 0
+	if being_blocked == true:
+		#disable dmg
+		pass
+	await get_tree().create_timer(1.0667).timeout
+	being_blocked = false
+	state = 0
 
 func _attack_crouch(delta):
-	pass
+	animation_player.play("crouch_attack")
+	#if animation_player.animation_finished("punch"):
+		#state = 0
+	if being_blocked == true:
+		#disable dmg
+		pass
+	await get_tree().create_timer(1.0667).timeout
+	being_blocked = false
+	state = 0
 
 func _attack_falling(delta):
 	pass

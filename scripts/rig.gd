@@ -1,7 +1,7 @@
 extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-@onready var skeleton_3d: Skeleton3D = $rig_base/Skeleton3D
+#@onready var skeleton_3d: Skeleton3D = $rig_base/Skeleton3D
 
 signal being_hit_to_main_script(dmg : float,stagger : float)
 signal getting_parried
