@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c50vqlhwfq2h8"]
 
 [ext_resource type="Script" uid="uid://cpvr6he6n03xx" path="res://scripts/script_fighter.gd" id="1_2vwdn"]
-[ext_resource type="PackedScene" uid="uid://clfpb6houqu53" path="res://scenes/rigs_without_parents/cowboy_rig_001.tscn" id="1_p4s2e"]
+[ext_resource type="PackedScene" uid="uid://dxal2em8jhkey" path="res://scenes/rigs_without_parents/cowboy_rig_001.tscn" id="1_p4s2e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7e5go"]
 radius = 0.3
@@ -23,3 +23,5 @@ shape = SubResource("CapsuleShape3D_7e5go")
 [node name="walljump_raycast" type="RayCast3D" parent="RIG"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 30, 0, -1, -1.3113416e-06, 0, 0.98411465, 0)
 target_position = Vector3(0, -0.5, 0)
+
+[connection signal="being_hit_to_main_script" from="RIG" to="." method="being_hit_to_main_script"]

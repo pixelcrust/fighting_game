@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://dra88ij7j8bot"]
+[gd_scene load_steps=4 format=3 uid="uid://dra88ij7j8bot"]
 
-[ext_resource type="PackedScene" uid="uid://b5m04rkbekqft" path="res://scenes/test_fighter.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://ynidwltvqkaa" path="res://scenes/camera.tscn" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://c50vqlhwfq2h8" path="res://scenes/fighters/cowboy_fighter.tscn" id="3_4wyf3"]
 
@@ -26,10 +25,6 @@ material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.122684, 0.598071, 0.791997, 0, -0.798026, 0.602623, 0.992446, 0.0739319, 0.0979046, 12.5149, 5.3762, -12.2308)
-
-[node name="test_fighter2" parent="." instance=ExtResource("1_f3sb7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.153, 2.945, 2)
-player = 1
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.940271, 10.472809, 0)
@@ -62,4 +57,8 @@ size = Vector3(5, 1, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="cowboy_fighter" parent="." instance=ExtResource("3_4wyf3")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.71596646, 3.0143502, 2)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.71596646, 3.0143502, 4.237258)
+
+[node name="cowboy_fighter2" parent="." instance=ExtResource("3_4wyf3")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 8.003258, 3.0143502, 4.237258)
+player = 1

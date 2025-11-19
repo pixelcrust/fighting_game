@@ -80,8 +80,6 @@ func _ready():
 	
 func _physics_process(delta):
 	
-
-	#print(str(hp))
 	#on floor
 	on_floor = base.is_colliding()
 	
@@ -166,9 +164,9 @@ func _physics_process(delta):
 			state = state_before
 			pass
 		7: # ..blocking
-			pass
+			_block(delta)
 		8: #..parrying
-			pass
+			_parry(delta)
 		9: #being parried
 			being_parried = false
 			await get_tree().create_timer(1.0667).timeout
@@ -193,8 +191,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func _attack_normal(delta):
-	
 	animation_player.play("attack_01")
+	base_rig.current_attack_dmg = 20
 	#if animation_player.animation_finished("punch"):
 		#state = 0
 	if being_blocked == true:
@@ -210,6 +208,7 @@ func _jump(delta):
 	
 func _attack_jump(delta):
 	animation_player.play("attack_02")
+	base_rig.current_attack_dmg = 10
 	#if animation_player.animation_finished("punch"):
 		#state = 0
 	if being_blocked == true:
@@ -237,10 +236,14 @@ func _attack_lying(delta):
 	pass
 	
 func _block(delta):
-	pass
+	animation_player.queue("block")
+	await get_tree().create_timer(1.0667).timeout
+	state = 0
 	
 func _parry(delta):
-	pass
+	animation_player.play("parry")
+	await get_tree().create_timer(1.0667).timeout
+	state = 0
 
 func _being_hit(delta):
 	pass
