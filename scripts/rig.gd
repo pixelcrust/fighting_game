@@ -10,15 +10,15 @@ signal getting_blocked
 @onready var current_attack_dmg : float = 0
 @onready var current_attack_stagger : float = 0
 @onready var current_attack_being_blocked : bool = false
+@onready var current_attack_being_parried : bool = false
 
-@onready var being_blocked : bool = false
+#@onready var being_blocked : bool = false
 
 func _process(delta):
 	pass
 
 func _on_physical_bone_being_hit(dmg : float, stagger : float) -> void:
 	print_debug("bone entered collision shape!!!!!!!!!!!!!")
-	print("hallo")
 	emit_signal("being_hit_to_main_script",dmg, stagger)
 	current_attack_dmg = 0
 	
@@ -33,8 +33,10 @@ func area_entered(area: Area3D) -> void:
 			if is_ancestor_of(area) == false:
 				#if blockbox
 				if area.is_in_group("block"):
+					current_attack_being_blocked = true
 					emit_signal("getting_blocked")
 				#if parrybox
 				if area.is_in_group("parry"):
+					current_attack_being_parried = true
 					emit_signal("getting_parried")
 			

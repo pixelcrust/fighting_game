@@ -211,8 +211,8 @@ func _attack_normal(delta):
 	base_rig.current_attack_dmg = 20
 	#if animation_player.animation_finished("punch"):
 		#state = 0
-	#if being_blocked == true:
-		#disable dmg
+	if being_blocked == true:
+		base_rig.current_attack_dmg = 0
 		#pass
 	await get_tree().create_timer(1.0667).timeout
 	being_blocked = false

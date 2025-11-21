@@ -11,5 +11,6 @@ func _process(delta):
 	pass
 
 func get_hit(dmg : float,stagger : float, being_blocked : bool):
+	print(str(being_blocked))
 	if being_blocked == false:
 		emit_signal("bone_hit",dmg,stagger)
