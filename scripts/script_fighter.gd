@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var run_speed : float = 3.0
 @export var jump_speed : float = 4.0
 @export var air_strafe_speed :float = 2.0
-
+@export var crouch_speed : float = 1.5
 
 
 @onready var animation_player: AnimationPlayer = $RIG.animation_player
@@ -145,6 +145,16 @@ func _physics_process(delta):
 			attack_state = 4
 			if Input.is_action_just_released(key_duck):
 				state = 0
+			if Input.is_action_pressed(key_left):
+				if is_facing_right:
+					turn_left(delta)
+				velocity.x = - crouch_speed * delta * 100
+			elif Input.is_action_pressed(key_right):
+				if !is_facing_right:
+					turn_right(delta)
+				velocity.x = crouch_speed * delta * 100
+			else:
+				velocity.x = 0
 		5: # ..attacking
 			#depending what state the player was before what attack is being played
 			match attack_state:
@@ -161,15 +171,17 @@ func _physics_process(delta):
 				_:
 					pass
 		6: # .. being hit
+			_being_hit(delta)
 			state = state_before
 			pass
 		7: # ..blocking
 			_block(delta)
+			if Input.is_action_just_released(key_block):
+				state = 0
 		8: #..parrying
 			_parry(delta)
 		9: #being parried
-			being_parried = false
-			await get_tree().create_timer(1.0667).timeout
+			_being_parried(delta)
 			state = 0
 		_:
 			pass
@@ -186,7 +198,11 @@ func _physics_process(delta):
 		2: #
 			base_rig.animation_player.play("jump_down")
 		4:
-			base_rig.animation_player.play("crouch_walk")
+			if velocity.x != 0:
+				base_rig.animation_player.play("crouch_walk")
+			else:
+				base_rig.animation_player.play("crouch_walk")
+				base_rig.animation_player.stop()
 			
 	move_and_slide()
 	
@@ -195,9 +211,9 @@ func _attack_normal(delta):
 	base_rig.current_attack_dmg = 20
 	#if animation_player.animation_finished("punch"):
 		#state = 0
-	if being_blocked == true:
+	#if being_blocked == true:
 		#disable dmg
-		pass
+		#pass
 	await get_tree().create_timer(1.0667).timeout
 	being_blocked = false
 	state = 0
@@ -238,15 +254,20 @@ func _attack_lying(delta):
 func _block(delta):
 	animation_player.queue("block")
 	await get_tree().create_timer(1.0667).timeout
-	state = 0
+	animation_player.queue("block")
 	
 func _parry(delta):
 	animation_player.play("parry")
 	await get_tree().create_timer(1.0667).timeout
 	state = 0
-
+	
+func _being_parried(delta):
+	base_rig.animation_player.play("got_parried")
+	being_parried = false
+	await get_tree().create_timer(1.0667).timeout
+	
 func _being_hit(delta):
-	pass
+	base_rig.animation_player.play("got_hit")
 
 func turn_left(delta):
 	print(str(rad_to_deg(base_rig.rotation.y)))
@@ -258,7 +279,6 @@ func turn_right(delta):
 	base_rig.rotation.y = deg_to_rad(0.0)
 	is_facing_right = true
 
-
 func being_hit_to_main_script(dmg: float, stagger: float) -> void:
 	print_debug("primary script reached")
 	hp -= dmg
@@ -269,7 +289,6 @@ func getting_blocked() -> void:
 	being_blocked = true
 	base_rig.being_blocked = true
 	print_debug("blocked lol")
-
 
 func getting_parried() -> void:
 	being_parried = true
