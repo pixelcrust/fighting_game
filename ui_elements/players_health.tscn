@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://csbkbtkyyxggu"]
+
+[ext_resource type="PackedScene" uid="uid://kpwvlhi2ldfv" path="res://ui_elements/life_bar.tscn" id="1_ukiul"]
+
+[node name="player_health" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.803
+anchor_right = 1.0
+anchor_bottom = 0.803
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player_count_2" type="HBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="LifeBar" parent="PanelContainer/player_count_2" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="LifeBar2" parent="PanelContainer/player_count_2" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="player_count_3" type="HBoxContainer" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="LifeBar" parent="PanelContainer/player_count_3" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="LifeBar2" parent="PanelContainer/player_count_3" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="LifeBar3" parent="PanelContainer/player_count_3" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="player_count_4" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LifeBar" parent="PanelContainer/player_count_4" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="LifeBar2" parent="PanelContainer/player_count_4" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="LifeBar3" parent="PanelContainer/player_count_4" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="LifeBar4" parent="PanelContainer/player_count_4" instance=ExtResource("1_ukiul")]
+layout_mode = 2
+size_flags_horizontal = 6

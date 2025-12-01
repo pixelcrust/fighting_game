@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dr8wc2esqf3iy"]
+
+[ext_resource type="FontFile" uid="uid://b4apvdpb7nkmr" path="res://Heavitas.ttf" id="1_me1xg"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_c6nvg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olihf"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.9999997, 0.9637365, 0.8670589, 0.90588236)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[resource]
+default_font = ExtResource("1_me1xg")
+Button/colors/font_color = Color(0.06, 0.06, 0.06, 1)
+Button/colors/font_disabled_color = Color(0.047557496, 0.047557727, 0.04755757, 0.5019608)
+Button/icons/icon = SubResource("ImageTexture_c6nvg")
+Label/colors/font_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+LineEdit/colors/font_color = Color(0.02950647, 0.02950661, 0.029506478, 1)
+LineEdit/colors/selection_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_olihf")
